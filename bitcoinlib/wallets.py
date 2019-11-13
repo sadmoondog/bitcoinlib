@@ -3530,7 +3530,8 @@ class HDWallet(object):
         if transaction.change < 0:
             raise WalletError("Total amount of outputs is greater then total amount of inputs")
         if transaction.change:
-            ck = self.get_key(account_id=account_id, network=network, change=1)
+            #ck = self.get_key(account_id=account_id, network=network, change=1)
+            ck = self.key_for_path(path=[0, 0], account_id=account_id, network=network)
             on = transaction.add_output(transaction.change, ck.address, encoding=self.encoding)
             transaction.outputs[on].key_id = ck.key_id
             amount_total_output += transaction.change
