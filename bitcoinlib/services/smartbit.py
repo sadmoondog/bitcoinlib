@@ -104,7 +104,7 @@ class SmartbitClient(BaseClient):
 
     def getbalance(self, addresslist):
         res = self.compose_request('address', 'wallet', ','.join(addresslist))
-        return res['wallet']['total']['received_int']
+        return res['wallet']['total']['balance_int']
 
     def getutxos(self, address, after_txid='', max_txs=MAX_TRANSACTIONS):
         utxos = []
