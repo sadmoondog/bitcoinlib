@@ -37,8 +37,9 @@ class CoinfeesClient(BaseClient):
 
     def estimatefee(self, blocks):
         res = self.compose_request('fees', 'recommended')
-        if blocks <= 1:
-            return res['fastestFee'] * 1024
-        elif blocks <= 2:
-            return res['halfHourFee'] * 1024
-        return res['hourFee'] * 1024
+        return res['fastestFee'] * 1024
+        #if blocks < 1:
+        #    return res['fastestFee'] * 1024
+        #elif blocks <= 2:
+        #    return res['halfHourFee'] * 1024
+        #return res['hourFee'] * 1024
