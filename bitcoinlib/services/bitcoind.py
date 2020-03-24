@@ -18,7 +18,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-from datetime import datetime
+from datetime import datetime as dt
 from bitcoinlib.main import *
 from bitcoinlib.services.authproxy import AuthServiceProxy
 from bitcoinlib.services.baseclient import BaseClient, ClientError
@@ -193,7 +193,7 @@ class BitcoindClient(BaseClient):
             o.spent = None
         t.block_hash = tx['blockhash']
         t.version = struct.pack('>L', tx['version'])
-        t.date = datetime.fromtimestamp(tx['blocktime'])
+        t.date = dt.fromtimestamp(tx['blocktime'])
         t.hash = txid
         t.update_totals()
         return t
