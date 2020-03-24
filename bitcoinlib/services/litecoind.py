@@ -18,7 +18,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-from datetime import datetime
+from datetime import datetime as dt
 from bitcoinlib.main import *
 from bitcoinlib.networks import Network
 from bitcoinlib.services.authproxy import AuthServiceProxy
@@ -199,7 +199,7 @@ class LitecoindClient(BaseClient):
             o.spent = None
         t.block_hash = tx['blockhash']
         t.version = struct.pack('>L', tx['version'])
-        t.date = datetime.fromtimestamp(tx['blocktime'])
+        t.date = dt.fromtimestamp(tx['blocktime'])
         t.update_totals()
         t.hash = txid
         return t
