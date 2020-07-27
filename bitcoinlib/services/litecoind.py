@@ -19,7 +19,6 @@
 #
 
 import struct
-import datetime
 from bitcoinlib.main import *
 from bitcoinlib.networks import Network
 from bitcoinlib.services.authproxy import AuthServiceProxy
