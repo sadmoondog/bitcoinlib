@@ -55,8 +55,13 @@ Required Python Packages, are automatically installed upon installing bitcoinlib
 Other requirements Linux
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
+On Debian, Ubuntu or their derivatives:
 
 ``sudo apt install build-essential python-dev python3-dev libgmp3-dev``
+
+On Fedora, CentOS or RHEL:
+
+``sudo dnf install python3-devel gmp-devel``
 
 To install OpenSSL development package on Debian, Ubuntu or their derivatives
 
@@ -72,7 +77,11 @@ Development environment
 
 Install database packages for MySQL and PostgreSQL
 
-``sudo apt install mysql-server postgresql postgresql-contrib libmysqlclient-dev postgresql-server-dev-11``
+``sudo apt install mysql-server postgresql postgresql-contrib libmysqlclient-dev``
+
+Check for the latest version of the PostgreSQL dev server:
+
+``sudo apt install postgresql-server-dev-<version>``
 
 From library root directory install the Python requirements
 
